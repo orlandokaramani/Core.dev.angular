@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './_services/User.service';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
@@ -72,6 +72,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RoleGuard } from './_guards/role.guard';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { BsDatepickerModule, PopoverModule } from 'ngx-bootstrap';
 
 
 
@@ -80,12 +82,16 @@ import { RoleGuard } from './_guards/role.guard';
     BrowserModule,
     HttpModule,
     FormsModule,
+    PopoverModule.forRoot(),
+    ReactiveFormsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
     HttpClientModule,
-  
+    TabsModule.forRoot(),
+    NgxGalleryModule,
+    BsDatepickerModule.forRoot()
   ],
   declarations: [
     AppComponent,
