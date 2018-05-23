@@ -4,11 +4,13 @@ import { Routes,
 
 import { DashboardComponent } from './dashboard.component';
 import { AuthGuard } from '../../_guards/auth.guard';
+import { DashboardTotalsResolver } from './dashboard.resolver';
 
 const routes: Routes = [
   {
     path: '', runGuardsAndResolvers: 'always', canActivate: [AuthGuard],
     component: DashboardComponent,
+    resolve: {totals: DashboardTotalsResolver},
     data: {
       title: 'Dashboard'
     }

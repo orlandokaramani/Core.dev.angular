@@ -55,6 +55,10 @@ export const routes: Routes = [
       {
         path: 'members',
         loadChildren: './views/members/members.module#MembersModule'
+      },
+      {
+        path: 'map',
+        loadChildren: './views/map/map.module#MapModule'
       }
     ]
   },

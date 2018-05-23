@@ -23,6 +23,7 @@
         "../node_modules/alertifyjs/build/css/themes/bootstrap.min.css",
         "../node_modules/simple-line-icons/css/simple-line-icons.css",
         "../node_modules/datatables.net-dt/css/jquery.dataTables.css",
+        "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
         "scss/style.scss"
       ],
       "scripts": [
@@ -31,6 +32,7 @@
         "../node_modules/chart.js/dist/Chart.min.js",
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/datatables.net/js/jquery.dataTables.js"
+        
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,0 +1,55 @@
+<div class="container">
+        <div class="row">
+          <h1>Profili i {{user.emer}}'s </h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="panel panel-default">
+              <img src="{{user?.photoUrl}}" alt="{{user?.knownAs}}" class="profile-image thumbnail">
+              <div class="panel-body">
+                <div>
+                  <strong>Të Dhëna:</strong>
+                  <p>{{user.emer}} {{user?.mbiemer}}</p>
+                </div>
+                <div>
+                  <strong>Mosha:</strong>
+                  <p>{{user.mosha}}</p>
+                </div>
+                <div>
+                  <strong>Aktiv së Fundi:</strong>
+                  <p>{{user.lastActive}}</p>
+                </div>
+               
+              </div>
+              <div class="panel-footer">
+                <div class="btn-group-justified">
+                  <div class="button-group">
+                    <button class="btn btn-primary"><i class="fa fa-thumbs-up"> Like</i></button>
+                    <button class="btn btn-success">Message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="tab-panel"><tabset class="member-tabset">
+                <tab heading ="Rreth {{user.emer}}'s">
+                  <h4>Përshkrimi</h4>
+                  <p>{{user.introduction}}</p>
+                  <h4>Interesa</h4>
+                  <p>{{user.interests}}</p>
+                   </tab>
+                   <tab heading ="Photos">
+                    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+                     </tab>
+                     <tab heading ="Mesazhet">
+                        <p>Mesazhet do jene ketu</p>
+                        </tab>
+        
+                </tabset></div>
+            
+      
+      
+          </div>
+        </div>
+      </div>

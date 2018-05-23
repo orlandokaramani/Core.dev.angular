@@ -1,0 +1,51 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> Anetaret
+          </div>
+          <div class="card-body">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table">
+              
+              <thead>
+                <tr>
+                  <th class="text-center">
+                    <i class="icon-people"></i>
+                  </th>
+                  <th>ID</th>  
+                  <th>Emer</th>
+                  <th>Atesi</th>
+                  <th>Mbiemer</th>
+                  <th>Mosha</th>
+                  <th>Gjinia</th>
+                  <!-- <th>Edito</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users">
+                  <td class="text-center">
+                    <div class="avatar"> <img src="{{user.photoUrl}}" class="img-avatar"[routerLink]="['/members/member-edit/', user.id]" routerLinkActive="router-link-active"/></div>
+                  </td>
+                   
+                    <td>{{ user.id }}</td> 
+                  <td>{{ user.emer }}</td>
+                  <td>{{ user.atesi }}</td>
+                  <td>{{ user.mbiemer }}</td>
+                  <td>{{ user.mosha }}</td>
+                  <td>{{ user.gjinia }}</td>
+                  <!-- <td><li><button class="btn btn-primary" [routerLink]="['/members/member-edit/', user.id]" routerLinkActive="router-link-active" ><i class="fa fa-edit"></i></button></li></td> -->
+                </tr>
+              </tbody>
+              </table>
+          
+            
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+    

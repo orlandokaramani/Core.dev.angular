@@ -1,1 +1,65 @@
 // Here you can add other styles
+// Here you can add other styles
+.profile-image{
+    margin: 25px;
+    width: 85%;
+    height: 85%;
+}
+
+.panel-body{
+    padding: 0 25px;
+}
+
+.panel-footer{
+    padding: 10px 15px;
+    background-color: #fff;
+    border-top: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-group-justified .btn-group .btn{
+    width: 95%;
+}
+
+.panel-default{
+    background: #fff
+}
+ .img-avatar{
+    width: 35px;
+    opacity: .6;
+    transition: 0.3s;
+}
+
+ .popover{
+    max-width: 400px !important;
+}
+.app-header.navbar .nav-item .nav-link > .img-avatar, .app-header.navbar .nav-item .dropdown-toggle > .img-avatar:hover{
+    width: 35px;
+    height: 35px;
+}
+.img-avatar:hover {
+    opacity: 1;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+.first-group,
+ .second-group {
+    padding: 20px;
+}
+
+ .second-group {
+    background-color: rgba(191, 191, 191, 0.15);
+}
+
+ .form-avatar {
+    height: 128px;
+    width: 128px;
+    margin-right: 10px;
+    border: 1px solid #d2d3d5;
+    border-radius: 50%;
+    background-image: url('#');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

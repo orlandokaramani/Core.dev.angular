@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Users } from '../../_models/User';
+import { UserService } from '../../_services/User.service';
+import { Totals } from '../../_models/Totals';
 
 @Component({
   templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
 
+  /**
+   *
+   */
+  constructor(private route: ActivatedRoute, private service: UserService) {
+ 
+    
+  }
+  totals: Totals;
+  user: Users;
   public brandPrimary = '#20a8d8';
   public brandSuccess = '#4dbd74';
   public brandInfo = '#63c2de';
@@ -460,12 +472,20 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.data.subscribe(data => {
+      this.totals = data['totals'];
+      console.log(this.totals);
+    }, 
+    )
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
     }
+   /*  this.service.getTotals().subscribe(result => { this.totals = result;}
+   
+    ) */
   }
 
   radioModel: string = 'Month';

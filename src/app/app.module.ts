@@ -1,3 +1,4 @@
+import { MemberEditResolver } from './views/members/member-edit.resolver';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './_services/User.service';
 import { AlertifyService } from './_services/alertify.service';
@@ -74,6 +75,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoleGuard } from './_guards/role.guard';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { BsDatepickerModule, PopoverModule } from 'ngx-bootstrap';
+import { AuthModule } from './auth/auth.module';
+import { MapService } from './_services/map.service';
 
 
 
@@ -81,6 +84,7 @@ import { BsDatepickerModule, PopoverModule } from 'ngx-bootstrap';
   imports: [
     BrowserModule,
     HttpModule,
+   AuthModule,
     FormsModule,
     PopoverModule.forRoot(),
     ReactiveFormsModule,
@@ -104,7 +108,8 @@ import { BsDatepickerModule, PopoverModule } from 'ngx-bootstrap';
     RoleGuard,
     AuthService,
     AlertifyService,
-    
+    UserService,
+    MapService,
 
     {
     provide: LocationStrategy,

@@ -9,6 +9,33 @@ export const navigation = [
     }
   },
   {
+    name: 'Users',
+    url: '/members',
+    icon: 'icon-user',
+    children: [
+      {
+        name: 'Profili Im',
+        url: '/members/member-detail',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Edito User',
+        url: '/members/edito-user',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Lista e Anetareve',
+        url: '/members/list-user',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Shto Anetar',
+        url: '/members/register-user',
+        icon: 'icon-star'
+      }
+    ]
+  },
+ /*  {
     title: true,
     name: 'Theme'
   },
@@ -109,7 +136,7 @@ export const navigation = [
         icon: 'icon-cursor'
       }
     ]
-  },
+  },*/
   {
     name: 'Charts',
     url: '/charts',
@@ -161,8 +188,21 @@ export const navigation = [
         icon: 'icon-bell'
       }
     ]
-  },
+  }, 
   {
+    name: 'Map',
+    url: '/map',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Map',
+        url: '/map/maps',
+        icon: 'icon-bell'
+      }
+     
+    ]
+  }, 
+  /* {
     name: 'Widgets',
     url: '/widgets',
     icon: 'icon-calculator',
@@ -178,23 +218,7 @@ export const navigation = [
     title: true,
     name: 'Extras',
   },
-  {
-    name: 'Users',
-    url: '/members',
-    icon: 'icon-user',
-    children: [
-      {
-        name: 'Profili Im',
-        url: '/members/member-detail',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Edito User',
-        url: '/members/member-edit',
-        icon: 'icon-star'
-      }
-    ]
-  },
+  */
   {
     name: 'Pages',
     url: '/pages',
