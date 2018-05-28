@@ -17,15 +17,15 @@ export class AppHeaderComponent implements OnInit{
     private userservice: UserService,
     private alertify: AlertifyService, private router: Router ){}
   user: Users;
-
+    photoUrl: string;
   ngOnInit(): void {
-this.userservice.getUser(this.authService.decodedToken.nameid)
-.subscribe(users => this.user = users)
-   console.log(this.user)
+this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
   
   logout() {
   this.authService.userToken = null;
+  this.authService.currentUser = null;
+  localStorage.removeItem('user');
   localStorage.removeItem('token');
   this.alertify.message('logged out');
   this.router.navigate(['/pages/login']);

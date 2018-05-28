@@ -1,6 +1,6 @@
-import { MemberDetailResolver } from './member-detail.resolver';
+import { MemberDetailResolver } from './Resolvers/member-detail.resolver';
 
-import { MemberEditResolver } from './member-edit.resolver';
+import { MemberEditResolver } from './Resolvers/member-edit.resolver';
 import { CommonModule } from '@angular/common';
 import { MemberEditComponent } from './member-edit.component';
 import { NgModule } from '@angular/core';
@@ -27,6 +27,8 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { PhotoEditorComponent } from './photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import {TimeAgoPipe } from 'time-ago-pipe'
+import { MemberListResolver } from './Resolvers/member-list.resolver';
 
 @NgModule({
   imports: [ 
@@ -42,7 +44,8 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     PaginationModule.forRoot(),
     ShowHidePasswordModule.forRoot(),
     NgxGalleryModule,
-    FileUploadModule
+    FileUploadModule,
+    PaginationModule.forRoot()
   ],
   declarations: [
   MemberDetailComponent,
@@ -51,13 +54,14 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
   ListUserComponent,
   RegisterUserComponent,
   ShikoUserComponent,
+  PhotoEditorComponent,
+  TimeAgoPipe,
   PhotoEditorComponent
-,
-    PhotoEditorComponent
 ],
   providers: [
     MemberEditResolver,
     MemberDetailResolver,
+    MemberListResolver,
     AlertifyService
   ],
 

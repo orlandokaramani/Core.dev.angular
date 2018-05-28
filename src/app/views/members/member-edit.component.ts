@@ -20,7 +20,7 @@ import { AuthService } from '../../_services/auth.service';
 })
 
 export class MemberEditComponent implements OnInit {
-
+photoUrl: string;
  id: number;
 private sub: any;
 user: Users;
@@ -53,10 +53,10 @@ njesiaselektuar
 
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.user = data['user'];
+      this.user = data['users'];
       console.log(data);
-    }, 
-    )
+    })
+    this.auth.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
   updateUser(){
     this.sub = this.route.params.subscribe(params => {
@@ -69,5 +69,9 @@ njesiaselektuar
       })
    });
     
+   }
+
+   updateMainPhoto(photoUrl) {
+     this.user.photoUrl = photoUrl;
    }
 }

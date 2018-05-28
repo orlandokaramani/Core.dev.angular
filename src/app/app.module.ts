@@ -1,4 +1,4 @@
-import { MemberEditResolver } from './views/members/member-edit.resolver';
+import { MemberEditResolver } from './views/members/Resolvers/member-edit.resolver';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './_services/User.service';
 import { AlertifyService } from './_services/alertify.service';

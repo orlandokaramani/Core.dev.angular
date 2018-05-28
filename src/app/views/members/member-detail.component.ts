@@ -52,7 +52,7 @@ njesiaselektuar
 
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.user = data['user'];
+      this.user = data['users'];
       console.log(data);
     }, 
     )

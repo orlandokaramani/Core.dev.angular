@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '../../_guards/auth.guard';
-import { MemberEditResolver } from './member-edit.resolver';
-import { MemberDetailResolver } from './member-detail.resolver';
+import { MemberEditResolver } from './Resolvers/member-edit.resolver';
+import { MemberDetailResolver } from './Resolvers/member-detail.resolver';
 import { EditoUserComponent } from './edito-user.component';
 import { ListUserComponent } from './list-user.component';
 import { RegisterUserComponent } from './register-user.component';
 import { ShikoUserComponent } from './shiko-user.component';
 import { RoleGuard } from '../../_guards/role.guard';
+import { MemberListResolver } from './Resolvers/member-list.resolver';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
       {
         path: 'register-user',
         component: RegisterUserComponent,
-        resolve: {user: MemberEditResolver},
+        resolve: {users: MemberEditResolver},
         data: {
           title: 'Register User'
         }
@@ -32,7 +33,7 @@ const routes: Routes = [
       {
         path: 'member-detail',
         component: MemberDetailComponent,
-        resolve: {user: MemberEditResolver},
+        resolve: {users: MemberEditResolver},
         data: {
           title: 'Edito User'
         }
@@ -40,7 +41,7 @@ const routes: Routes = [
       {
         path: 'list-user',
         component: ListUserComponent,
-        resolve: {user: MemberEditResolver},
+        resolve: {users: MemberListResolver},
         data: {
           title: 'Lista e Anetareve'
         }
@@ -48,7 +49,7 @@ const routes: Routes = [
       {
         path: 'edito-user',
         component: EditoUserComponent,
-        resolve: {user: MemberEditResolver},
+        resolve: {users: MemberEditResolver},
         data: {
           title: 'Edito User'
         }
@@ -56,7 +57,7 @@ const routes: Routes = [
       {
         path: 'shiko-user/:id',
         component: ShikoUserComponent,
-        resolve: {user: MemberDetailResolver},
+        resolve: {users: MemberDetailResolver},
         data: {
           title: 'Shiko User'
         }

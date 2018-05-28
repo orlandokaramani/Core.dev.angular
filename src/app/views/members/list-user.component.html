@@ -35,9 +35,19 @@
                       <td>{{ user.gjinia }}</td>
                       
                     </tr>
+                 
                   </tbody>
+                  
                   </table>
-              
+                  <pagination 
+                  [boundaryLinks]="true" 
+                  [totalItems]="pagination.totalItems"
+                  [(ngModel)]="pagination.currentPage"
+                  (pageChanged)= "pageChanged($event)"
+                  [itemsPerPage]="pagination.itemsPerPage"
+                  previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+       
+      </pagination>
                 
               </div>
             </div>

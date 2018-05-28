@@ -17,7 +17,7 @@ export class ShikoUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      this.user = data['user']
+      this.user = data['users'];
     })
 
     this.galleryOptions = [

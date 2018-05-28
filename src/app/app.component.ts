@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from './_services/auth.service';
 import { JwtHelper } from 'angular2-jwt';
+import { Users } from './_models/User';
 
 @Component({
   // tslint:disable-next-line
@@ -18,9 +19,14 @@ export class AppComponent implements OnInit {
   
   ngOnInit() {
     const token = localStorage.getItem('token');
+    const user: Users = JSON.parse(localStorage.getItem('user'));
     if (token) {
       this.authService.decodedToken = this.jwtHelper.decodeToken(token);
- }
+    }
+    if(user) {
+      this.authService.currentUser = user;
+      this.authService.changeMemberPhoto(user.photoUrl)
+    }
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
